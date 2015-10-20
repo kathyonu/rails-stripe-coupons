@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  protect_from_forgery :except => :create
-  after_action :process_order, :only => :create
+  protect_from_forgery except: :create
+  after_action :process_order, only: :create
 
   def new
     build_resource({})

@@ -27,8 +27,7 @@ class MakePaymentService
   end
 
   def create_charge(customer, user)
-    price = user.coupon.nil? ?
-      Rails.application.secrets.product_price : user.coupon.price
+    price = user.coupon.nil? ? Rails.application.secrets.product_price : user.coupon.price
     title = Rails.application.secrets.product_title
     charge = Stripe::Charge.create(
       :customer    => customer.id,

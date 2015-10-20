@@ -1,6 +1,8 @@
 RSpec.configure do |config|
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with(:transaction)
+   # 20150529 : now using transaction ^^ to accomodate Coupons
+   # DatabaseCleaner.clean_with(:truncation)
   end
 
   config.before(:each) do

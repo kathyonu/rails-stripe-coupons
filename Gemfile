@@ -10,10 +10,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'byebug'
-end
-group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'pry'
   gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 gem 'bootstrap-sass'
 gem 'devise'
@@ -21,6 +20,7 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'stripe'
 gem 'sucker_punch'
+gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
@@ -31,10 +31,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'stripe-ruby-mock', '~> 2.2.0', :require => 'stripe_mock'
 end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'email_spec'
   gem 'launchy'
   gem 'selenium-webdriver'
 end

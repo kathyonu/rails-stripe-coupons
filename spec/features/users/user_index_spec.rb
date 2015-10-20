@@ -5,7 +5,7 @@ Warden.test_mode!
 #   As a user
 #   I want to see a list of users
 #   So I can see who has registered
-feature 'User index page', :devise do
+feature 'User index page', :devise, js: true do
 
   after(:each) do
     Warden.test_reset!
@@ -16,7 +16,9 @@ feature 'User index page', :devise do
   #   When I visit the user index page
   #   Then I see my own email address
   scenario 'user sees own email address' do
-    user = FactoryGirl.create(:user, :admin)
+    user = FactoryGirl.build(:user)
+    user.role = 'admin'
+    user.save!
     login_as(user, scope: :user)
     visit users_path
     expect(page).to have_content user.email

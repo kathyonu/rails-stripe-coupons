@@ -3,9 +3,11 @@
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
+    <h3>Products list:</h3>
+    <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
   <% else %>
-    <h3>Download the book.</h3>
-    <%= link_to 'Download PDF', products_path('product.pdf'), :class => 'btn btn-success btn-large' %>
+    <h3>Download the book.
+    <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %></h3>
   <% end %>
 <% else %>
   <h3>Purchase the book.</h3>
