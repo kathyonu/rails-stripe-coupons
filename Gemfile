@@ -31,6 +31,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'stripe-ruby-mock' , '~> 2.2.0', require: 'stripe_mock'
 end
 group :test do
   gem 'capybara'
