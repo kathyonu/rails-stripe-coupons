@@ -4,10 +4,16 @@
     <div class="column">
       <table class="table">
         <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <%= render user %>
-            </tr>
+          <% if user_signed_in? %>
+            <% if current_user.try(:admin?) %>
+              <% @users.each do |user| %>
+                <tr>
+                  <%= render user %>
+                </tr>
+              <% else %>
+                'This page is restricted to administrators'
+              <% end %>
+            <% end %>
           <% end %>
         </tbody>
       </table>

@@ -4,6 +4,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    unless current_user.admin?
+      redirect_to :back, :alert => "Access denied."
+    end
   end
 
   def show
