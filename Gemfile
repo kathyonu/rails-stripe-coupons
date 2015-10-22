@@ -30,6 +30,7 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
+  gem 'pry'
   gem 'faker'
   gem 'rspec-rails'
   gem 'stripe-ruby-mock', '~> 2.2.0', :require => 'stripe_mock'
