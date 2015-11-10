@@ -16,7 +16,9 @@ feature 'Product acquisition' do
   #   When I click the 'Download' button
   #   Then I should receive a PDF file
   scenario 'Admin can download the product and view Products List' do
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.build(:user)
+    user.role = 'admin'
+    user.save!
     login_as(user, scope: :user)
     visit root_path
     expect(page.response_headers['Content-Type']).to have_content 'text/html; charset=utf-8'
