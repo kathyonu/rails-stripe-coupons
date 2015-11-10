@@ -13,7 +13,6 @@ group :development, :test do
   gem 'pry'
   gem 'rubocop', require: false
   gem 'spring'
-  gem 'web-console', '~> 2.0'
 end
 gem 'bootstrap-sass'
 gem 'devise'
@@ -27,13 +26,13 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'pry'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'stripe-ruby-mock', '~> 2.2.0', :require => 'stripe_mock'
+  gem 'stripe-ruby-mock', '~> 2.2.0', require: 'stripe_mock'
 end
 group :test do
   gem 'capybara'
